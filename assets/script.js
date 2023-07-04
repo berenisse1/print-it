@@ -58,7 +58,6 @@ for (let i=0; i<3; i++){
 
 
 
-
 //tbl dots
 const dots=[ "dot1","dots2", "dots3", "dots4" ]
 

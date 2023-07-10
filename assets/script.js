@@ -18,10 +18,9 @@ const slides = [
 ]
 
 //images
-slide[0].src=/assets/images/slideshow/ + slides [compteurSlide].image;
+//slide[0].src = "assets/images/slideshow/" + slides[compteurSlide].image;
 
-tagLine[0].innerHTML= slides[compteurSlides].tagLine;
-
+//tagLine[0].innerHTML= slides [compteurSlide].tagLine;
 
 
 

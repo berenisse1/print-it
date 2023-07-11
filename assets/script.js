@@ -35,16 +35,13 @@ console.log("tagLine")
 
 //images
 slide[0].src = "assets/images/slideshow/" + slides[compteur].image;
-tagLine.innerHTML= slides [compteur].tagLine;
-
+//tagLine.innerHTML= slides [compteur].tagLine;
 
 let position = compteur
-//tagLine.innerHTML = slides[compteur].tagLine;
-//slide[position].src= ".assets/images/slideshow/" + slides[compteur].image;
 
 function showSlide(){
 	slide[position].src= ".assets/images/slideshow/" + slides[compteur].image;
-	tagLine.innerHTML = slide.tagLine;	
+	tagLine.innerHTML = slides[compteur].tagLine;	
 }
 
 
@@ -67,23 +64,22 @@ arrow[1].addEventListener("click",() => {
 function previous(){
 	compteur--;
 	if (compteur < 0) {
-		compteur = slides.length - 1;//retour derniere slide
-	console.log("précedent")
+		compteur = slides.length - 1;//retour dernière slide en cas de dépacement borne min tbl
 	}
-	showSlide(compteur);
-	mouveDot(compteur);
+	showSlide();
+	mouveDot();
+	console.log(compteur)//pr verifier sur quelle slide on atterrit lors du clic
 }
 
 // incrémenter +1 de compteur//
  function next() {
 	compteur++;
 	if (compteur >= slides.length) {
-		compteur = 0;//retour 1er slide
-	console.log("suivant")
+		compteur = 0;//retour 1er slide en cas de dépacement borne max tbl
 	}
-	showSlide(compteur);
-	mouveDot(compteur);
-	
+	showSlide();
+	mouveDot();
+	console.log(compteur)//pr verifier sur quelle slide on atterrit lors du clic
 }
 
 

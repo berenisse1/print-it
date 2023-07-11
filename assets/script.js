@@ -20,25 +20,24 @@ const slides = [
 
 //SLIDE
 
-// déclare variable
 let compteur = 0
 
-// declaration variables + recuperation éléments 
 const arrow = document.getElementsByClassName("arrow")
 console.log(arrow)
 const slide = document.getElementsByClassName("banner-img")
 console.log("banner-img")
-const tagLine = document.querySelector("#banner p")
+const tagLine = document.querySelector("tagLine")
 console.log("tagLine")
 
 //slide initiale visible au chargement de la page = slide1 en position 0
 slide[0].src = "./assets/images/slideshow/" + slides[compteur].image;
-let position = compteur
+tagLine[compteur].innerHTML = slides[compteur].tagLine;
+//let position = compteur
 
 // Affichage slide image + tagline consulter
 function showSlide(){
-	slide[position].src= "./assets/images/slideshow/" + slides[compteur].image;
-	tagLine.innerHTML = slides[compteur].tagLine;	
+	slide[compteur].src= "./assets/images/slideshow/" + slides[compteur].image;
+	tagLine[compteur].innerHTML = slides[compteur].tagLine;	
 }
 
 
@@ -57,18 +56,18 @@ arrow[1].addEventListener("click",() => {
 })
 
 
-//déduire +1 de compteur//
+//déduire -1 de compteur//
 function previous(){
 	compteur--;
 	if (compteur < 0) {
-		compteur = slides.length - 1;//compteur = 3 => retour dernière slide en cas de dépacement borne min tbl
+		compteur = slides.length - 1;//retour dernière slide en cas de dépacement borne min tbl
 	}
 	showSlide();
 	mouveDot();
 	console.log(compteur)//pr verifier sur quelle slide on atterrit lors du clic
 }
 
-// incrémenter +1 de compteur//
+// incrémenter +1 au compteur//
  function next() {
 	compteur++;
 	if (compteur >= slides.length) {
@@ -76,13 +75,12 @@ function previous(){
 	}
 	showSlide();
 	mouveDot();
-	console.log(compteur)//pr verifier sur quelle slide on atterrit lors du clic
+	console.log(compteur)
 }
 
 
 //DOT
 
-// Déclare et récupere variable dots et dot
 const dots = document.querySelector(".dots");
 console.log(".dots")
 const dot = document.querySelector(".dot");
@@ -95,9 +93,7 @@ console.log(dotSelected)
 
 //mise à jour position dotSelected
 function selectDot () {
-	return document.querySelector(`.dots .dot:nth-child(${compteur +1})`);
-	//sélecteur nth-child (pseudo-classe) pr cibler chaque élément qui est n-ième enfant de dots.
-	//interpolation ajoute +1 à la position du dotselected 
+	return document.querySelector(`.dots .dot:nth-child(${compteur +1})`);//nth-child (pseudo-classe) ajoute +1 à la position du dotSelected 
 }
  
 // Changement de dot lors du changement de slide

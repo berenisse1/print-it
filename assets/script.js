@@ -23,29 +23,26 @@ const slides = [
 // déclare variable
 let compteur = 0
 
-// declaration + recupere élément quia attribut arrox
+// declaration variables + recuperation éléments 
 const arrow = document.getElementsByClassName("arrow")
 console.log(arrow)
-
 const slide = document.getElementsByClassName("banner-img")
 console.log("banner-img")
-
 const tagLine = document.querySelector("#banner p")
 console.log("tagLine")
 
-//images
+//slide initiale visible au chargement de la page = slide1 en position 0
 slide[0].src = "./assets/images/slideshow/" + slides[compteur].image;
-//tagLine.innerHTML= slides [compteur].tagLine;
-
 let position = compteur
 
+// Affichage slide image + tagline consulter
 function showSlide(){
 	slide[position].src= "./assets/images/slideshow/" + slides[compteur].image;
 	tagLine.innerHTML = slides[compteur].tagLine;	
 }
 
 
-//ajout evetlisner sur fléches + instruction a éxecuter au clic//
+//ajout evetlisener sur fléches + instruction a éxecuter au clic//
 
 const arow= document.getElementsByClassName("arrow");
 
@@ -64,7 +61,7 @@ arrow[1].addEventListener("click",() => {
 function previous(){
 	compteur--;
 	if (compteur < 0) {
-		compteur = slides.length - 1;//retour dernière slide en cas de dépacement borne min tbl
+		compteur = slides.length - 1;//compteur = 3 => retour dernière slide en cas de dépacement borne min tbl
 	}
 	showSlide();
 	mouveDot();

@@ -17,12 +17,8 @@ const slides = [
 	}
 ]
 
-//images
-//slide[0].src = "assets/images/slideshow/" + slides[compteurSlide].image;
 
-//tagLine[0].innerHTML= slides [compteurSlide].tagLine;
-
-
+//SLIDE
 
 // déclare variable
 let compteur = 0
@@ -34,78 +30,62 @@ console.log(arrow)
 const slide = document.getElementsByClassName("banner-img")
 console.log("banner-img")
 
-const tagLine = document.getElementsByClassName("tagLine")
+const tagLine = document.querySelector("#banner p")
 console.log("tagLine")
 
+//images
+slide[0].src = "assets/images/slideshow/" + slides[compteur].image;
+tagLine.innerHTML= slides [compteur].tagLine;
 
 
+let position = compteur
+//tagLine.innerHTML = slides[compteur].tagLine;
+//slide[position].src= ".assets/images/slideshow/" + slides[compteur].image;
 
-//ajouter fléches//
-
-//const arrowLeft = document.getElementsByClassName("arrow_left");
-//console.log(arrowLeft)
-
-//const arrowRight = document.getElementsByClassName("arrow_right");
-//console.log(arrowRight)
+function showSlide(){
+	slide[position].src= ".assets/images/slideshow/" + slides[compteur].image;
+	tagLine.innerHTML = slide.tagLine;	
+}
 
 
-// ajouter eventLiistenner
-//arrowLeft.addEventListener ("click",function() {
-//	console.log("vous avez cliquez sur la flèche de gauche")
-//})
+//ajout evetlisner sur fléches + instruction a éxecuter au clic//
+
+const arow= document.getElementsByClassName("arrow");
 
 arrow[0].addEventListener("click",() => {
-	console.log("vous avez cliquez sr la flèche gauche");
+    console.log("vous avez cliquez sur la flèche gauche");
+	previous();     
 })
 
 arrow[1].addEventListener("click",() => {
-	console.log("vous avez cliquez sr la flèche droite");
+    console.log("vous avez cliquez sur la flèche droite");
+	next();
 })
 
 
-//déduire -1 de slides//
-function previous(slidesLength){
-	if(slides.length<3){
-		console.log("slides--")
+//déduire +1 de compteur//
+function previous(){
+	compteur--;
+	if (compteur < 0) {
+		compteur = slides.length - 1;//retour derniere slide
+	console.log("précedent")
 	}
+	showSlide(compteur);
+	//selectDot(compteur);
 }
 
-// incrémenter +1 de slides//
- function next(slidesLenght) {
-	if(slides.length<3){
-		console.log("slides++")
+// incrémenter +1 de compteur//
+ function next() {
+	compteur++;
+	if (compteur >= slides.length) {
+		compteur = 0;//retour 1er slide
+	console.log("suivant")
 	}
+	showSlide(compteur);
+	//selectDot(compteur);
 	
- }
-
- //boucle slide arret dernière slide=slide4//
-for (let i=0; i<3; i++){
-	console.log(i)
 }
 
 
-
-//tbl dots//
-const dots=[ "dot1","dots2", "dots3", "dots4" ]
-
-//déduire -1 de dots//
-function mouveLeft(dotsLength){
-	if(dots.length<3){
-		console.log("slides--")
-	}
-}
-
-// incrémenter +1 de dots//
- function mouveRight(dotsLenght) {
-	if(dots.length<3){
-		console.log("slides++")
-	}
-	
- }
-
-//boucle dots arret dernière dots//
-for (let i=0; i<dots.length; i++){
-	console.log(i)
-}
 
 

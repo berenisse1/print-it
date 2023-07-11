@@ -71,7 +71,7 @@ function previous(){
 	console.log("précedent")
 	}
 	showSlide(compteur);
-	//selectDot(compteur);
+	mouveDot(compteur);
 }
 
 // incrémenter +1 de compteur//
@@ -82,7 +82,7 @@ function previous(){
 	console.log("suivant")
 	}
 	showSlide(compteur);
-	//selectDot(compteur);
+	mouveDot(compteur);
 	
 }
 
@@ -94,4 +94,25 @@ const dots = document.querySelector(".dots");
 console.log(".dots")
 const dot = document.querySelector(".dot");
 console.log(".dot")
+
+// Sélection dot selon position du slide consulter
+
+let dotSelected = selectDot();
+console.log(dotSelected)
+
+//mise à jour position dotSelected
+function selectDot () {
+	return document.querySelector(`.dots .dot:nth-child(${compteur +1})`);
+	//sélecteur nth-child (pseudo-classe) pr cibler chaque élément qui est n-ième enfant de dots.
+	//interpolation ajoute +1 à la position du dotselected 
+}
+ 
+// Changement de dot lors du changement de slide
+function mouveDot() {
+	dotSelected.classList.remove("dot_selected");//enlever class dotselected sur encien dot
+	dotSelected = selectDot(); 
+	dotSelected.classList.add("dot_selected");//afficher class dotSelected sur new dot  
+}
+
+
 

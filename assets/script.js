@@ -34,13 +34,13 @@ const tagLine = document.querySelector("#banner p")
 console.log("tagLine")
 
 //images
-slide[0].src = "assets/images/slideshow/" + slides[compteur].image;
+slide[0].src = "./assets/images/slideshow/" + slides[compteur].image;
 //tagLine.innerHTML= slides [compteur].tagLine;
 
 let position = compteur
 
 function showSlide(){
-	slide[position].src= ".assets/images/slideshow/" + slides[compteur].image;
+	slide[position].src= "./assets/images/slideshow/" + slides[compteur].image;
 	tagLine.innerHTML = slides[compteur].tagLine;	
 }
 

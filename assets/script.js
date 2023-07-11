@@ -87,5 +87,11 @@ function previous(){
 }
 
 
+//DOT
 
+// Déclare et récupere variable dots et dot
+const dots = document.querySelector(".dots");
+console.log(".dots")
+const dot = document.querySelector(".dot");
+console.log(".dot")
 

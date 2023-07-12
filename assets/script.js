@@ -25,14 +25,14 @@ let compteur = 0
 const arrow = document.getElementsByClassName("arrow")
 console.log(arrow)
 const slide = document.getElementsByClassName("banner-img")
-console.log("banner-img")
-const tagLine = document.querySelector("tagLine")
-console.log("tagLine")
+console.log(slide)
+const tagLine = document.querySelector("#banner p")
+console.log(tagLine)
 
-//slide initiale visible au chargement de la page = slide1 en position 0
+//slides initiale visible au chargement de la page 
 slide[0].src = "./assets/images/slideshow/" + slides[compteur].image;
 tagLine[compteur].innerHTML = slides[compteur].tagLine;
-//let position = compteur
+
 
 // Affichage slide image + tagline consulter
 function showSlide(){
@@ -57,6 +57,7 @@ arrow[1].addEventListener("click",() => {
 
 
 //déduire -1 de compteur//
+
 function previous(){
 	compteur--;
 	if (compteur < 0) {

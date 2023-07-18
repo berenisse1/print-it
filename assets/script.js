@@ -30,18 +30,19 @@ const tagLine = document.querySelector("#banner p")
 console.log(tagLine)
 
 //slides initiale visible au chargement de la page 
-slide[0].src = "./assets/images/slideshow/" + slides[compteur].image;
-tagLine[compteur].innerHTML = slides[compteur].tagLine;
+slide[0].src= "./assets/images/slideshow/" + slides[compteur].image;
+tagLine.innerHTML = slides[compteur].tagLine;	
+
 
 
 // Affichage slide image + tagline consulter
 function showSlide(){
-	slide[compteur].src= "./assets/images/slideshow/" + slides[compteur].image;
-	tagLine[compteur].innerHTML = slides[compteur].tagLine;	
+	slide[0].src= "./assets/images/slideshow/" + slides[compteur].image;
+	tagLine.innerHTML = slides[compteur].tagLine;	
 }
 
 
-//ajout evetlisener sur fléches + instruction a éxecuter au clic//
+//ajout eventlisener sur fléches + instruction a éxecuter au clic//
 
 const arow= document.getElementsByClassName("arrow");
 

@@ -44,8 +44,6 @@ function showSlide(){
 
 //ajout eventlisener sur fléches + instruction a éxecuter au clic//
 
-const arow= document.getElementsByClassName("arrow");
-
 arrow[0].addEventListener("click",() => {
     console.log("vous avez cliquez sur la flèche gauche");
 	previous();     
@@ -66,7 +64,7 @@ function previous(){
 	}
 	showSlide();
 	mouveDot();
-	console.log(compteur)//pr verifier sur quelle slide on atterrit lors du clic
+	console.log(compteur)//pour verifier sur quelle slide on atterrit lors du clic
 }
 
 // incrémenter +1 au compteur//
@@ -84,9 +82,9 @@ function previous(){
 //DOT
 
 const dots = document.querySelector(".dots");
-console.log(".dots")
+console.log(dots)
 const dot = document.querySelector(".dot");
-console.log(".dot")
+console.log(dot)
 
 // Sélection dot selon position du slide consulter
 
@@ -95,7 +93,7 @@ console.log(dotSelected)
 
 //mise à jour position dotSelected
 function selectDot () {
-	return document.querySelector(`.dots .dot:nth-child(${compteur +1})`);//nth-child (pseudo-classe) ajoute +1 à la position du dotSelected 
+	return document.querySelector(`.dots .dot:nth-child(${compteur +1})`);//nth-child (pseudo-classe) 
 }
  
 // Changement de dot lors du changement de slide
